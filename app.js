@@ -1,7 +1,7 @@
 const axios = require('axios');
 const express = require('express');
 const bodyParser = require('body-parser');
-const SHA1 = require('sha1');
+const SHA1a = require('sha1');
 const cookieParser = require('cookie-parser')
 
 const app = express();
@@ -23,7 +23,7 @@ const authorize = (login, password) => axios({
     method: 'post',
     data: {
         login: login,
-        password: SHA1(password)
+        password: SHA1a(password)
     }
 })
 
